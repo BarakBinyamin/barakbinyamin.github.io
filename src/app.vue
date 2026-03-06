@@ -25,7 +25,7 @@ html,body{
   background-color: #212121;
   color: #ffffff;
   letter-spacing: .01rem;
-  font-weight: 700;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased; /* For Safari/Chrome */
   -moz-osx-font-smoothing: grayscale; /* For Firefox on Mac */
 }
