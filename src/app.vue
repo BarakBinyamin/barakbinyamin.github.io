@@ -21,9 +21,12 @@ html,body{
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  font-size: 18px;
+  font-size: 24px;
   background-color: #212121;
   color: #ffffff;
-  letter-spacing: .1rem;
+  letter-spacing: .01rem;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased; /* For Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on Mac */
 }
 </style>
