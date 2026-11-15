@@ -1,13 +1,13 @@
 <template>
     <div class="page-title"> ☆ The Store  ☆</div>
-    <div class="info">Please reach me via <a class="link" target="_blank" href="https://ig.me/m/barak_binyamin">instagram</a> for the quickest response</div>
+    <div class="info">Please reach me via <a class="link" target="_blank" href="https://www.linkedin.com/in/barak-binyamin/">linkedIn</a> for the quickest response</div>
     <div class="grid">
         <div class="card">
             <div class="hero-container">
                 <img class="hero" style="" src="/portfoliodevad.png"/>
             </div>
             <div class="title">Portfolio Devleopment</div>
-            <div class="price-container">Price: <pre class="price">Free</pre></div>
+            <div class="price-container">Price: <pre class="price">Negotiable</pre></div>
             <div class="description">Showcase your talent at little to no cost, check out <a class="link" href="https://cameron-cronin.github.io/" target="_blank">this example</a></div>
         </div>
         <div class="card">
@@ -15,7 +15,7 @@
                 <img class="hero" src="/tutoring.jpg"/>
             </div>
             <div class="title">Tutoring</div>
-            <div class="price-container">Price: <pre class="price">Free</pre></div>
+            <div class="price-container">Price: <pre class="price">Negotiable</pre></div>
             <div class="description">Statistics, Computer Science, Software Engineering, Computer Engineering, Web Design</div>
         </div>
         <div class="card">
