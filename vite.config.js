@@ -1,24 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
-import path from 'path'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(), 
-    viteStaticCopy({
-      targets: [
-        {
-          src: path.resolve(__dirname, 'index.html'),
-          dest: '', 
-          rename: '404.html' 
-        },
-      ],
-    })
+    vue()
   ],
   build: {
-    outDir: 'docs', 
-    emptyOutDir: true, 
+    outDir: '../docs'
   },
+  server : {
+    allowedHosts : [
+      "a76ec4b65f02d0.lhr.life"
+    ]
+  }
 })
