@@ -40,4 +40,9 @@ app.use(VueShowdownPlugin, {
     }
 })
 
+// prevents install pwa prompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+})
+
 app.mount('#app')
