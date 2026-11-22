@@ -13,7 +13,7 @@ export default defineConfig({
         short_name: 'BaraksWebsite',
         theme_color: '#000000',
         icons: [
-          { src: 'public/icon.png', sizes: '192x192', type: 'image/png' },
+          { src: 'site-images/icon.png', sizes: '192x192', type: 'image/png' },
         ]
       }
     })
