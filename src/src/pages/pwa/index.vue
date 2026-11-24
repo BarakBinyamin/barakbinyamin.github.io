@@ -62,12 +62,15 @@ export default{
         // 2. Ensure we have the active registration
         const registration = this.swRegistration || (await navigator.serviceWorker.ready);
 
-        const {publickey} = await fetch('https://buzz.rockz.one/topic').then(res => res.json());
+        const {topic} = await fetch('https://buzz.rockz.one/topic').then(res => res.json());
+
+        console.log(this.urlBase64ToUint8Array(topic))
+        console.log(topic)
 
         // 3. Subscribe with your VAPID public key
         const subscription = await registration.pushManager.subscribe({
           userVisibleOnly: true,
-          applicationServerKey: this.urlBase64ToUint8Array(publickey),
+          applicationServerKey: this.urlBase64ToUint8Array(topic),
         });
 
         // 4. Send this subscription JSON to your backend API
