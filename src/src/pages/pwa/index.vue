@@ -10,6 +10,10 @@
 
 <script>
 export default{
+  mounted(){
+    // check if subscribed, show subscribe button
+
+  },
   methods:   {
     urlBase64ToUint8Array(base64String) {
       const padding = '='.repeat((4 - base64String.length % 4) % 4);
@@ -20,18 +24,22 @@ export default{
       return Uint8Array.from([...raw].map(c => c.charCodeAt(0)));
     },
     async subscribe(){
-      const {publickey} = await fetch('https://buzz.rockz.one/topic').then(res => res.json());
-      let sub = await reg.pushManager.getSubscription();
-      if (sub) {       await sub.unsubscribe() }
-        sub  = await reg.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: urlBase64ToUint8Array(publickey)
-      })
-      await fetch(`https://buzz.rockz.one/subscribe`, {
-        method: 'POST',
-        body: JSON.stringify({subscription: sub}),
-        headers: { 'Content-Type': 'application/json' }
-      })
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+        const reg = await navigator.serviceWorker.register('/sw.js');
+        const {publickey} = await fetch('https://buzz.rockz.one/topic').then(res => res.json());
+
+        let sub = await reg.pushManager.getSubscription();
+        if (sub) {       await sub.unsubscribe() }
+          sub  = await reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(publickey)
+        })
+        await fetch(`https://buzz.rockz.one/subscribe`, {
+          method: 'POST',
+          body: JSON.stringify({subscription: sub}),
+          headers: { 'Content-Type': 'application/json' }
+        })
+      }
     }
   }
 }
