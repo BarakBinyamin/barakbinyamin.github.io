@@ -31,7 +31,7 @@ export default {
       const isStandalone = window.matchMedia('(display-mode: standalone)').matches
       const isIOSStandalone = window.navigator.standalone === true
       const isTWA = document.referrer.startsWith('android-app://')
-      if (isStandalone | isIOSStandalone | isTWA){ window.location = "/pwa" }
+      if (isStandalone | isIOSStandalone | isTWA){ this.$router.replace("/pwa") }
     }
 }
 
