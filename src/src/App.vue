@@ -27,6 +27,11 @@ export default {
       //   document.documentElement.style.setProperty('--vh', `${vh}px`)
       //   this.$emit('resize',{vh:vh})
       // })
+      // if pwa route to /pwa
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      const isIOSStandalone = window.navigator.standalone === true
+      const isTWA = document.referrer.startsWith('android-app://')
+      if (isStandalone | isIOSStandalone | isTWA){ window.location = "/pwa" } 
     }
 }
 

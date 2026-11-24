@@ -8,9 +8,8 @@ import Blog from  '../pages/blog/index.vue'
 import Post from  '../pages/blog/post/index.vue'
 import Table from  '../pages/table/index.vue'
 import Store from  '../pages/store/index.vue'
+import PWA from  '../pages/pwa/index.vue'
 import API   from '../assets/analyticsapi.js'
-
-// import Store from  '../pages/posts/index.vue'
 
 /* Define routes and rendering in order of priority */
 const routes = [
@@ -55,6 +54,11 @@ const routes = [
     path: '/store',
     name: 'store',
     component: Store,
+  },
+  {  
+    path: '/pwa',
+    name: 'pwa',
+    component: PWA,
   },
   { 
     path: '/:pathMatch(.*)*',
