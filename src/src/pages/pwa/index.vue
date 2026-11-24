@@ -5,6 +5,7 @@
   <!-- Connect and wait for call otherwise -->
   <!-- TODO show if server connected -->
    <button v-if="!isSubscribed" @click="subscribe()">subscribe</button>
+   <h1 v-if="isSubscribed">subscribed!</h1>
   </div>
 </template>
 
