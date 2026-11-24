@@ -21,7 +21,7 @@ import bottom from "./components/footer/index.vue"
 export default {
     name: 'dropdown',
     components: { navbar, bottom },
-    onMounted(){
+    mounted(){
       // window.addEventListener('resize', () => {
       //   let vh = window.innerHeight * 0.01
       //   document.documentElement.style.setProperty('--vh', `${vh}px`)
@@ -31,10 +31,7 @@ export default {
       const isStandalone = window.matchMedia('(display-mode: standalone)').matches
       const isIOSStandalone = window.navigator.standalone === true
       const isTWA = document.referrer.startsWith('android-app://')
-      if (isStandalone | isIOSStandalone | isTWA){ window.location = "/pwa" }else{
-        alert("not pwa")
-      }
-
+      if (isStandalone | isIOSStandalone | isTWA){ window.location = "/pwa" }
     }
 }
 
