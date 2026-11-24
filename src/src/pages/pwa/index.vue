@@ -13,7 +13,7 @@ export default{
   data(){
     return {
       isSubscribed : false,
-      swRegistration: false,
+      swRegistration: null,
 
     }
   },
@@ -64,14 +64,14 @@ export default{
         // 3. Subscribe with your VAPID public key
         const subscription = await registration.pushManager.subscribe({
           userVisibleOnly: true,
-          applicationServerKey: urlBase64ToUint8Array(publickey),
+          applicationServerKey: this.urlBase64ToUint8Array(publickey),
         });
 
         // 4. Send this subscription JSON to your backend API
         console.log('Push Subscription:', JSON.stringify(subscription));
         await fetch(`https://buzz.rockz.one/subscribe`, {
           method: 'POST',
-          body: JSON.stringify({subscription: sub}),
+          body: JSON.stringify({subscription: subscription}),
           headers: { 'Content-Type': 'application/json' }
         })
       } catch (error) {
