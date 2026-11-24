@@ -47,6 +47,7 @@ export default{
       return Uint8Array.from([...raw].map(c => c.charCodeAt(0)));
     },
     async subscribe(){
+      console.log("pressed subscribe!")
       if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
         alert('Push notifications are not supported in this browser.');
         return;
@@ -55,6 +56,7 @@ export default{
       try {
         // 1. Request permission from the user
         const permission = await window.Notification.requestPermission();
+        console.log("requested permission to do notifications")
         if (permission !== 'granted') return;
 
         // 2. Ensure we have the active registration
