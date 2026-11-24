@@ -21,7 +21,7 @@ import bottom from "./components/footer/index.vue"
 export default {
     name: 'dropdown',
     components: { navbar, bottom },
-    mounted(){
+    created(){
       // window.addEventListener('resize', () => {
       //   let vh = window.innerHeight * 0.01
       //   document.documentElement.style.setProperty('--vh', `${vh}px`)
