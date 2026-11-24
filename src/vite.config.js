@@ -8,6 +8,13 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.js',
+      devOptions: {
+        enabled: true,
+        type: 'module',
+      },
       manifest: {
         name: 'Baraks Website',
         short_name: 'BaraksWebsite',
